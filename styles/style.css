@@ -1,59 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap');
 
-/* BASE */
 body {
   margin: 0;
-  background: #ffffff;
+  background: #fff6f9;
   font-family: 'Inter', sans-serif;
-  color: #222;
+  color: #3a3a3a;
 }
 
 /* CONTENEDOR */
 .container {
-  max-width: 600px;
-  margin: 100px auto;
-  padding: 20px;
+  max-width: 500px;
+  margin: 120px auto;
   text-align: center;
+  padding: 20px;
 }
 
 /* TITULO */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  margin-bottom: 5px;
 }
 
 /* SUBTITULO */
 .subtitle {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 2px;
-  color: #888;
-  margin-bottom: 40px;
+  color: #b5838d;
+  margin-bottom: 30px;
 }
 
 /* TEXTO */
 p {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* IMAGEN */
 img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 20px;
   margin: 30px 0;
 }
 
 /* BOTONES */
 a {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 15px;
   text-decoration: none;
-  color: black;
-  border-bottom: 1px solid black;
+  color: #b5838d;
+  border-bottom: 1px solid #b5838d;
   font-size: 14px;
 }
 
 a:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }

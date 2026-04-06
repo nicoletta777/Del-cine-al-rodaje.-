@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap');
 
+/* BASE */
 body {
   margin: 0;
-  background: #fff;
+  background: #ffffff;
   font-family: 'Inter', sans-serif;
   color: #222;
 }
@@ -11,8 +12,8 @@ body {
 .container {
   max-width: 600px;
   margin: 100px auto;
-  text-align: center;
   padding: 20px;
+  text-align: center;
 }
 
 /* TITULO */
@@ -30,17 +31,17 @@ h1 {
   margin-bottom: 40px;
 }
 
+/* TEXTO */
+p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 /* IMAGEN */
 img {
   width: 100%;
   border-radius: 12px;
   margin: 30px 0;
-}
-
-/* TEXTO */
-p {
-  font-size: 15px;
-  line-height: 1.6;
 }
 
 /* BOTONES */

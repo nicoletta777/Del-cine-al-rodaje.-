@@ -1,86 +1,64 @@
-/* ===== TIPOGRAFÍA ELEGANTE ===== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+/* ===== TIPOGRAFÍA VOGUE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap');
 
 /* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #2c2c2c;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: #ffffff;
   text-align: center;
-  background-size: cover;
-  background-position: center;
 }
 
-/* ===== CAPA SUAVE ===== */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 240, 245, 0.6);
-  z-index: -1;
+/* ===== CONTENEDOR ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-/* ===== TITULOS ===== */
+/* ===== TITULO VOGUE ===== */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 55px;
-  margin-top: 60px;
-  letter-spacing: 2px;
-  color: #b5838d;
+  font-size: 70px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
 }
 
-/* ===== TEXTO ===== */
+/* ===== SUBTEXTO ===== */
 p {
-  font-size: 18px;
-  max-width: 500px;
-  margin: 20px auto;
+  font-size: 16px;
+  max-width: 400px;
   line-height: 1.6;
+  color: #555;
 }
 
-/* ===== IMÁGENES ===== */
+/* ===== IMAGEN ===== */
 img {
-  width: 300px;
-  margin: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 260px;
+  margin: 30px 0;
+  object-fit: cover;
 }
 
-/* ===== BOTONES ===== */
+/* ===== BOTONES MINIMAL ===== */
 a {
-  display: inline-block;
   margin: 10px;
-  padding: 12px 25px;
-  background: #b5838d;
-  color: white;
+  padding: 8px 18px;
   text-decoration: none;
-  border-radius: 25px;
+  color: #111;
+  border-bottom: 1px solid #111;
+  font-size: 14px;
+  letter-spacing: 1px;
   transition: 0.3s;
 }
 
 a:hover {
-  background: #ffafcc;
+  opacity: 0.5;
 }
 
-/* ===== FONDOS SUAVES ===== */
-.home {
-  background: url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4");
-}
-
-.produccion {
-  background: url("https://images.unsplash.com/photo-1485846234645-a62644f84728");
-}
-
-.rodaje {
-  background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
-}
-
-.edicion {
-  background: url("https://images.unsplash.com/photo-1518770660439-4636190af475");
-}
-
-.cine {
-  background: url("https://images.unsplash.com/photo-1505685296765-3a2736de412f");
+/* ===== AUDIO CLEAN ===== */
+audio {
+  margin-top: 20px;
 }

@@ -1,75 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap');
 
 body {
   margin: 0;
-  background: #0a0a0a;
-  color: #f2f2f2;
+  background: #0f0f10;
+  color: #e8e8e8;
   font-family: 'Inter', sans-serif;
 }
 
 /* CONTENEDOR */
 .container {
-  max-width: 900px;
-  margin: 100px auto;
+  max-width: 1000px;
+  margin: 80px auto;
   padding: 40px;
 }
 
 /* HEADER */
-.header {
-  margin-bottom: 80px;
-}
-
 .header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
+  font-size: 56px;
   margin: 0;
 }
 
 .subtitle {
-  font-size: 12px;
-  letter-spacing: 4px;
-  color: #999;
-  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #aaa;
+  margin-top: 8px;
 }
 
-/* SECCIÓN */
+/* BLOQUE PRINCIPAL */
 .section {
-  margin-bottom: 100px;
+  margin-top: 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
-/* IMAGEN GRANDE */
+/* IMAGEN (NO GIGANTE) */
 .section img {
-  width: 100%;
+  width: 45%;
   border-radius: 8px;
-  margin-bottom: 30px;
-  filter: brightness(80%) contrast(110%);
-}
-
-/* TITULO */
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  margin-bottom: 15px;
+  object-fit: cover;
+  filter: contrast(110%) brightness(85%);
 }
 
 /* TEXTO */
+.section-text {
+  width: 55%;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
 .section p {
-  color: #cccccc;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
-  max-width: 700px;
+  color: #d0d0d0;
 }
 
 /* LINKS */
 a {
   display: inline-block;
   margin-top: 20px;
-  text-decoration: none;
   color: #ffffff;
-  border-bottom: 1px solid #666;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
   font-size: 14px;
 }
 
 a:hover {
   opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .section img,
+  .section-text {
+    width: 100%;
+  }
 }

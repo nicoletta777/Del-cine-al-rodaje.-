@@ -1,71 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap');
 
 body {
   margin: 0;
+  background: #fff;
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #111;
+  color: #222;
 }
 
 /* CONTENEDOR */
 .container {
-  max-width: 1000px;
-  margin: 60px auto;
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
   padding: 20px;
 }
 
-/* HEADER */
-.header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.header h1 {
+/* TITULO */
+h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 70px;
-  letter-spacing: 5px;
-  margin: 0;
+  font-size: 48px;
+  margin-bottom: 10px;
 }
 
+/* SUBTITULO */
 .subtitle {
   font-size: 13px;
-  letter-spacing: 3px;
-  color: #777;
-}
-
-/* LAYOUT REVISTA */
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 40px;
 }
 
 /* IMAGEN */
-.content img {
+img {
   width: 100%;
+  border-radius: 12px;
+  margin: 30px 0;
 }
 
 /* TEXTO */
-.text {
-  text-align: left;
-}
-
-.text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
-}
-
-.text p {
-  line-height: 1.7;
+p {
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 /* BOTONES */
 a {
+  display: inline-block;
+  margin-top: 20px;
   text-decoration: none;
-  color: #111;
-  border-bottom: 1px solid #111;
-  margin-right: 15px;
+  color: black;
+  border-bottom: 1px solid black;
+  font-size: 14px;
 }
 
 a:hover {

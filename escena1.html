@@ -1,35 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Escena 1</title>
-  <link rel="stylesheet" href="style/style.css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 
+<audio id="bg" loop>
+<source src="audio/suspenso.mp3">
+</audio>
+
 <div class="scene">
+<img src="https://i.pinimg.com/736x/1d/20/f0/1d20f07d3d5cff046eff61c993204248.jpg">
 
-  <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<div class="overlay">
+<h1>NO ESTÁS SOLA</h1>
+<p id="texto"></p>
 
-  <div class="overlay">
-
-    <h1>EL RUIDO</h1>
-
-    <p>
-      Un sonido rompe el silencio.  
-      Viene de una puerta cerrada.
-    </p>
-
-    <div class="options">
-      <a href="escena2a.html">Abrir la puerta →</a>
-      <a href="escena2b.html">Ignorar →</a>
-    </div>
-
-  </div>
+<div class="options">
+<a href="escena2a.html" onclick="transicion(event)">Mirar atrás →</a>
+<a href="escena2b.html" onclick="transicion(event)">Correr →</a>
+</div>
 
 </div>
+</div>
+
+<script>
+// TEXTO
+let t="Algo respira detrás de ti...";
+let i=0;
+(function escribir(){
+if(i<t.length){
+document.getElementById("texto").innerHTML+=t[i++];
+setTimeout(escribir,50);
+}})();
+
+// AUDIO
+document.addEventListener("click",()=>{
+let a=document.getElementById("bg");
+a.volume=0.25;
+a.play();
+},{once:true});
+
+// TRANSICIÓN
+function transicion(e){
+e.preventDefault();
+document.body.classList.add("fade-out");
+setTimeout(()=>{window.location=e.target.href},500);
+}
+
+// FINAL SECRETO
+let clicks=0;
+document.addEventListener("click",()=>{
+clicks++;
+if(clicks===10){
+let audio=new Audio("audio/suspenso.mp3");
+audio.volume=1;
+audio.play();
+
+document.body.innerHTML=`
+<div id="pantalla" style="background:black;color:red;height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:monospace;">
+<h1 id="mensaje" style="font-size:70px;"></h1>
+</div>`;
+
+let txt="TE ENCONTRE";
+let j=0;
+
+function escribir2(){
+if(j<txt.length){
+document.getElementById("mensaje").innerHTML+=txt[j++];
+setTimeout(escribir2,120);
+}}
+setTimeout(escribir2,500);
+
+setInterval(()=>{
+document.getElementById("pantalla").style.transform=
+`translate(${Math.random()*10-5}px,${Math.random()*10-5}px)`;
+},80);
+
+setTimeout(()=>{window.location="index.html"},7000);
+}
+});
+</script>
 
 </body>
 </html>

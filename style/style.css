@@ -1,24 +1,23 @@
 body {
   margin: 0;
-  font-family: Arial;
-  color: white;
+  background: black;
+  color: #00fff7;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
 }
 
-/* ESCENA */
 .scene {
   position: relative;
   height: 100vh;
 }
 
-/* IMAGEN */
 .scene img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(40%);
+  filter: brightness(35%) contrast(120%);
 }
 
-/* TEXTO ENCIMA */
 .overlay {
   position: absolute;
   top: 0;
@@ -26,20 +25,58 @@ body {
   padding: 80px;
 }
 
-/* TITULO */
-.overlay h1 {
-  font-size: 50px;
+h1 {
+  font-size: 60px;
+  text-shadow: 0 0 10px #00fff7, 0 0 40px #00fff7;
+  animation: flicker 2s infinite;
 }
 
-/* TEXTO */
-.overlay p {
+p {
   font-size: 22px;
+  max-width: 500px;
 }
 
-/* OPCIONES */
 .options a {
   display: block;
-  margin: 10px 0;
-  color: white;
+  margin: 15px 0;
+  color: #ff004c;
   text-decoration: none;
+  font-size: 18px;
+}
+
+@keyframes flicker {
+  0%, 100% {opacity:1;}
+  50% {opacity:0.3;}
+}
+
+/* SHAKE */
+.shake {
+  animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+  0% {transform: translate(2px,2px);}
+  50% {transform: translate(-2px,-2px);}
+  100% {transform: translate(2px,-2px);}
+}
+
+/* GLITCH */
+.glitch {
+  position: relative;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -2px 0 red;
+  top: 0;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 2px 0 blue;
+  top: 0;
 }

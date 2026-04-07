@@ -1,23 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+<audio id="bg" loop>
+<source src="audio/suspenso.mp3">
+</audio>
+
+<img id="jumpscare" src="https://i.pinimg.com/736x/d6/66/d8/d666d8882fa6a9d4e4834b05fdc31e6b.jpg"
+style="display:none;position:fixed;width:100%;height:100%;object-fit:cover;z-index:999;">
 
 <div class="scene">
-
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<img src="https://i.pinimg.com/736x/53/c1/a7/53c1a7388bad38adbc909f36cfe211ae.jpg">
 
 <div class="overlay">
-
 <h1>LA HABITACIÓN</h1>
-
-<p>
-La puerta se abre lentamente.  
-No hay nadie… pero una cámara sigue encendida.
-</p>
+<p>La cámara sigue grabando… sola.</p>
 
 <div class="options">
-<a href="escena3a.html">Revisar la cámara →</a>
-<a href="escena3b.html">Salir corriendo →</a>
+<a href="escena3a.html" onclick="transicion(event)">Ver grabación →</a>
+<a href="escena3b.html" onclick="transicion(event)">Huir →</a>
 </div>
 
 </div>
-
 </div>
+
+<script>
+// AUDIO
+document.addEventListener("click",()=>{
+let a=document.getElementById("bg");
+a.volume=0.25;
+a.play();
+},{once:true});
+
+// TRANSICIÓN
+function transicion(e){
+e.preventDefault();
+document.body.classList.add("fade-out");
+setTimeout(()=>{window.location=e.target.href},500);
+}
+
+// JUMPSCARE
+setTimeout(()=>{
+let js=document.getElementById("jumpscare");
+js.style.display="block";
+
+let scream=new Audio("audio/suspenso.mp3");
+scream.volume=1;
+scream.play();
+
+document.body.classList.add("shake");
+
+setTimeout(()=>{
+js.style.display="none";
+document.body.classList.remove("shake");
+},800);
+
+},5000);
+</script>
+
+</body>
+</html>

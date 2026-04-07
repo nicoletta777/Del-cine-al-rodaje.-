@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>La última escena</title>
-  <link rel="stylesheet" href="style/style.css">
+<meta charset="UTF-8">
+<title>La última escena</title>
+<link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 
-<div class="container">
+<audio id="bg" loop>
+<source src="audio/suspenso.mp3">
+</audio>
 
-<h1>LA ÚLTIMA ESCENA</h1>
-
-<p>
-Estás sola en un set de filmación.  
-Todo el equipo ya se fue.  
-Pero algo… no está bien.
-</p>
-
-<a href="escena1.html">Entrar al set →</a>
-
-</div>
-
-</body>
-</html>
 <div class="scene">
 
-<img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f">
+<img src="https://i.pinimg.com/1200x/18/d0/3c/18d03c1a5d5c3a4ad989a996abdf1543.jpg">
 
 <div class="overlay">
 
 <h1>LA ÚLTIMA ESCENA</h1>
-
-<p>
-Estás sola en un set de filmación.  
-Todo el equipo se ha ido…  
-pero algo sigue ahí.
-</p>
+<p>El set está vacío… pero alguien sigue aquí.</p>
 
 <div class="options">
-<a href="escena1.html">Entrar →</a>
+<a href="escena1.html" onclick="transicion(event)">Entrar →</a>
 </div>
 
 </div>
-
 </div>
+
+<script>
+document.addEventListener("click", () => {
+let a=document.getElementById("bg");
+a.volume=0.2;
+a.play();
+},{once:true});
+
+function transicion(e){
+e.preventDefault();
+document.body.classList.add("fade-out");
+setTimeout(()=>{window.location=e.target.href},500);
+}
+</script>
+
+</body>
+</html>

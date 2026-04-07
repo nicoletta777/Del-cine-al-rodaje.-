@@ -1,23 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+<audio id="bg" loop>
+<source src="audio/suspenso.mp3">
+</audio>
 
 <div class="scene">
-
-<img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26">
+<img src="https://i.pinimg.com/736x/d6/66/d8/d666d8882fa6a9d4e4834b05fdc31e6b.jpg">
 
 <div class="overlay">
-
 <h1>EL PASILLO</h1>
-
-<p>
-Decides no mirar atrás.  
-Pero las luces comienzan a fallar una por una.
-</p>
+<p>Las luces se apagan una por una.</p>
 
 <div class="options">
-<a href="escena3b.html">Seguir caminando →</a>
-<a href="escena3a.html">Regresar →</a>
+<a href="escena3b.html" onclick="transicion(event)">Seguir →</a>
+<a href="escena3a.html" onclick="transicion(event)">Volver →</a>
 </div>
 
 </div>
-
 </div>
+
+<script>
+document.addEventListener("click",()=>{
+let a=document.getElementById("bg");
+a.volume=0.25;
+a.play();
+},{once:true});
+
+function transicion(e){
+e.preventDefault();
+document.body.classList.add("fade-out");
+setTimeout(()=>{window.location=e.target.href},500);
+}
+</script>
+
+</body>
+</html>

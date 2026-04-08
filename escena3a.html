@@ -1,55 +1,105 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="style/style.css">
-</head>
-
-<body>
-
-<div class="scene">
-<div class="overlay">
-<h1>FINAL</h1>
-<p>Siempre estuviste siendo observada.</p>
-</div>
-</div>
-
 <script>
+
+// ESPERA ANTES DEL FINAL
 setTimeout(()=>{
+
 document.body.innerHTML = `
 
-<div style="
+<div id="final" style="
   position:relative;
   width:100%;
   height:100vh;
   overflow:hidden;
+  background:black;
 ">
 
-  <img src="https://i.pinimg.com/736x/88/ad/4b/88ad4bde8f0b61d2a1da650ed9c0cd92.jpg"
+  <!-- IMAGEN -->
+  <img id="imgFinal"
+  src="https://i.pinimg.com/736x/88/ad/4b/88ad4bde8f0b61d2a1da650ed9c0cd92.jpg"
   style="
     width:100%;
     height:100%;
     object-fit:cover;
-    filter:brightness(40%);
+    filter:brightness(20%);
   ">
 
-  <h1 style="
+  <!-- TEXTO -->
+  <h1 id="textoFinal" style="
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
     color:red;
-    font-size:80px;
-    text-shadow:0 0 20px red;
+    font-size:90px;
+    text-shadow:0 0 30px red;
+    opacity:0;
   ">
     TE ENCONTRÓ
   </h1>
 
 </div>
-
 `;
-},4000);
-</script>
 
-</body>
-</html>
+
+// SONIDO FUERTE
+let scream = new Audio("audio/suspenso.mp3");
+scream.volume = 1;
+
+
+// PARPADEO ANTES DEL TEXTO
+let flashes = 0;
+let intervalo = setInterval(()=>{
+  document.getElementById("imgFinal").style.filter =
+    flashes % 2 === 0 ? "brightness(5%)" : "brightness(60%)";
+  flashes++;
+
+  if(flashes > 6){
+    clearInterval(intervalo);
+
+    // APARECE TEXTO
+    let texto = document.getElementById("textoFinal");
+    texto.style.opacity = 1;
+
+    // SONIDO + TEMBLOR
+    scream.play();
+    document.body.classList.add("shake");
+
+  }
+
+}, 150);
+
+
+// GLITCH CONTINUO
+setInterval(()=>{
+  document.getElementById("final").style.transform =
+    `translate(${Math.random()*20-10}px, ${Math.random()*20-10}px)`;
+}, 60);
+
+
+// APAGÓN FINAL
+setTimeout(()=>{
+  document.body.innerHTML = `
+    <div style="
+      background:black;
+      color:white;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:monospace;
+    ">
+      <h1>...</h1>
+    </div>
+  `;
+}, 5000);
+
+
+// REINICIO AUTOMÁTICO
+setTimeout(()=>{
+  window.location.href = "index.html";
+}, 7000);
+
+
+}, 3000);
+
+</script>

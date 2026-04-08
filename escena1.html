@@ -38,11 +38,23 @@ setTimeout(escribir,50);
 }})();
 
 // AUDIO
-document.addEventListener("click",()=>{
-let a=document.getElementById("bg");
-a.volume=0.25;
-a.play();
-},{once:true});
+<audio id="bg" loop>
+  <source src="audio/suspenso.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", () => {
+  const audio = document.getElementById("bg");
+
+  audio.volume = 0.3;
+
+  // FORZAR REPRODUCCIÓN
+  audio.play().catch(() => {
+    console.log("audio bloqueado");
+  });
+
+}, { once: true });
+</script>
 
 // TRANSICIÓN
 function transicion(e){

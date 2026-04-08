@@ -87,3 +87,13 @@ p {
   text-shadow: 2px 0 blue;
   top: 0;
 }
+.letra {
+  display: inline-block;
+  animation: colorShift 2s infinite alternate;
+}
+
+@keyframes colorShift {
+  0% { color: #8b0000; }
+  50% { color: #ff0000; }
+  100% { color: #ff4d4d; }
+}

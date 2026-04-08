@@ -82,6 +82,17 @@ document.getElementById("pantalla").style.transform=
 setTimeout(()=>{window.location="index.html"},7000);
 }
 });
+<script>
+function hablar(texto) {
+  let voz = new SpeechSynthesisUtterance(texto);
+
+  voz.lang = "es-ES";
+  voz.rate = 0.7;
+  voz.pitch = 0.4; // más grave = creepy
+  voz.volume = 1;
+
+  speechSynthesis.speak(voz);
+}
 </script>
 
 </body>

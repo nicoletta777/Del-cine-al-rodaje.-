@@ -31,9 +31,11 @@ body {
 }
 
 h1 {
-  font-size: 60px;
-  text-shadow: 0 0 10px #00fff7, 0 0 40px #00fff7;
-  animation: flicker 2s infinite;
+  font-family: 'Creepster', cursive;
+  color: red;
+  font-size: 80px;
+  text-shadow: 0 0 10px red, 0 0 30px darkred;
+}
 }
 
 p {

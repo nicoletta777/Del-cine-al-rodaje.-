@@ -16,7 +16,38 @@
 
 <script>
 setTimeout(()=>{
-document.body.innerHTML="<h1 style='color:red;text-align:center;margin-top:40vh;'>TE ENCONTRÓ</h1>";
+document.body.innerHTML = `
+
+<div style="
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+">
+
+  <img src="https://i.pinimg.com/736x/88/ad/4b/88ad4bde8f0b61d2a1da650ed9c0cd92.jpg"
+  style="
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(40%);
+  ">
+
+  <h1 style="
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:red;
+    font-size:80px;
+    text-shadow:0 0 20px red;
+  ">
+    TE ENCONTRÓ
+  </h1>
+
+</div>
+
+`;
 },4000);
 </script>
 

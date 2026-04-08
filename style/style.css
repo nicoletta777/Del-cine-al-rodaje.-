@@ -20,9 +20,14 @@ body {
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 600px;
+  .options {
+  margin-top: 30px;
+}
 }
 
 h1 {
